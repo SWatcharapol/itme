@@ -17,18 +17,6 @@ st.markdown(html_8, unsafe_allow_html=True)
 st.markdown("")
 
 
-# st.header("Kusuma")
-st.image("./pic/11.jpg")
-html_8 = """
-<div style="background-color:#660099;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
-<center><h5>การทำนายข้อมูลดอกไม้</h5></center>
-</div>
-"""
-
-st.markdown(html_8, unsafe_allow_html=True)
-st.markdown("")
-
-
 dt = pd.read_csv("./data/iris.csv")
 st.write(dt.head(10))
 
