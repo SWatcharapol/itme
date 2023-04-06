@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 
+# st.header("kairung")
 st.image("./img/soiju.jpg")
 html_8 = """
 <div style="background-color:#990066;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
@@ -55,9 +56,16 @@ if st.button("ทำนายผล"):
    y = dt.variety
    Knn_model = KNeighborsClassifier(n_neighbors=3)
    Knn_model.fit(X, y)
-   x_input = np.array([[5.1, 3.5, 1.4, 0.2]])
+
+   x_input = np.array([[pt_len, pt_wd, sp_len, sp_wd]])
    st.write(Knn_model.predict(x_input))
 
-   st.button("ไม่แสดงข้อมูล")
+   out = Knn_model.predict(x_input)
+
+   if out[0] == 'Setosa':
+    st.image("./pic/setosa.jpg")
+   else:
+    st.writ('xxx')
+   # st.button("ไม่แสดงข้อมูล")
 else:
-    st.write("ไม่แสดงข้อมูล")
+   st.write("ไม่แสดงข้อมูล")
